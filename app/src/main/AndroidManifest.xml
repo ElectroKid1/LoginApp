@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".register_page"/>
+        <activity android:name=".display_dbdata"/>
 
 
 
