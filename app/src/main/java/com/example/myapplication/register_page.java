@@ -44,15 +44,14 @@ public class register_page extends AppCompatActivity {
 
         if(passnew_recieved.equals(passReenter_recieved)){
 
-            try{
-                sqldb.execSQL("INSERT INTO Registered_users VALUES('"+name_recieved+"','"+mail_recieved+"','"+phone_recieved+"','"+passnew_recieved+"')");
+            try {
+                sqldb.execSQL("INSERT INTO Registered_users VALUES('" + name_recieved + "','" + mail_recieved + "','" + phone_recieved + "','" + passnew_recieved + "')");
+
 
             }catch (Exception e){
                 Toast.makeText(getApplicationContext(),"unable to insert",Toast.LENGTH_SHORT).show();
 
             }
-
-//            Toast.makeText(getApplicationContext(),"Password match",Toast.LENGTH_SHORT).show();
 
         }
         else{
@@ -62,16 +61,7 @@ public class register_page extends AppCompatActivity {
 
     }
     public void check_db_data(View view){
-//        Cursor resultSet = sqldb.rawQuery("SELECT * FROM Registered_users",null);
-//        resultSet.moveToFirst();
-////        Toast.makeText(getApplicationContext(),resultSet.getString(0)+" "+resultSet.getString(1)+" "+resultSet.getString(2),Toast.LENGTH_SHORT).show();
-//
-//// TO CHECK HOW MANY ROWS ARE THERE IN THE DATABASE
-//        int rows = resultSet.getCount();
-//        Toast.makeText(getApplicationContext(),Integer.toString(rows),Toast.LENGTH_SHORT).show();
-//
-////TO DELETE THE DATA IN THE DATABASE
-////    sqldb.execSQL("DELETE FROM Registered_users");
+
         Intent intent=new Intent(this,display_dbdata.class);
         startActivity(intent);
     }
