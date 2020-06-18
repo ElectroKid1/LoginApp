@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class login_page extends AppCompatActivity {
-    Button b_login,b_register;
+    Button b_login,b_goto_registerpage;
     TextView l1,l2;
     EditText e_name,e_pass;
     @Override
@@ -22,7 +22,7 @@ public class login_page extends AppCompatActivity {
         setContentView(R.layout.login_page);
 
         b_login = (Button) findViewById(R.id.btn_login);
-        b_register = (Button) findViewById(R.id.btn_register);
+        b_goto_registerpage = (Button) findViewById(R.id.btn_register);
         l1 = (TextView) findViewById(R.id.lbl_heading1);
         l2 = (TextView) findViewById(R.id.lbl_ques);
         e_name = (EditText) findViewById(R.id.txt_name);
@@ -60,13 +60,14 @@ public class login_page extends AppCompatActivity {
 
             }
         });
-    }
 
-    public void do_register(View view){
-        //Toast.makeText(getApplicationContext(),"This is to register you ",Toast.LENGTH_SHORT).show();
-        Intent intent=new Intent(this,register_page.class);
+    }
+    public void goto_registerpage(View view){
+
+        Intent intent= new Intent(this,register_page.class);
         startActivity(intent);
-
     }
+
+
 
 }

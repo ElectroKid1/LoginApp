@@ -32,6 +32,8 @@ public class register_page extends AppCompatActivity {
 
 
 
+
+
     }
     public void do_register(View view){
         String name_recieved,mail_recieved,passnew_recieved,passReenter_recieved;
