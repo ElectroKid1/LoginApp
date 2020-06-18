@@ -45,6 +45,9 @@ public class login_page extends AppCompatActivity {
                         e_pass.setText("");
                         e_name.setText("");
 
+                        Intent intent=new Intent(login_page.this,app_page.class);
+                        startActivity(intent);
+
                     }
                     else {
                         Toast.makeText(getApplicationContext(),"Wrong password",Toast.LENGTH_SHORT).show();

@@ -48,15 +48,28 @@ public class register_page extends AppCompatActivity {
 
             try {
                 sqldb.execSQL("INSERT INTO Registered_users VALUES('" + name_recieved + "','" + mail_recieved + "','" + phone_recieved + "','" + passnew_recieved + "')");
+                e_name.setText("");
+                e_mail.setText("");
+                e_phone.setText("");
+                e_passnew.setText("");
+                e_passReenter.setText("");
+                Toast.makeText(getApplicationContext(),"You are registered successfully",Toast.LENGTH_SHORT).show();
+
+                Intent intent=new Intent(this,app_page.class);
+                startActivity(intent);
 
 
             }catch (Exception e){
-                Toast.makeText(getApplicationContext(),"unable to insert",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Username already taken",Toast.LENGTH_SHORT).show();
+                e_name.setText("");
 
             }
 
         }
         else{
+            e_passnew.setText("");
+            e_passReenter.setText("");
+
             Toast.makeText(getApplicationContext(),"Password does not match",Toast.LENGTH_SHORT).show();
 
         }
